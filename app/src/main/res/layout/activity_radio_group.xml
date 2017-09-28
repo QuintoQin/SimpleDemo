@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.qinqin.simpledemo.model.bottomtablayout.RadioGroupActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <FrameLayout
+        android:id="@+id/rg_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/rg_groups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/RadioButtonStyle"
+            android:drawableTop="@drawable/btn_tab_home_selector"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/rb_customized"
+            style="@style/RadioButtonStyle"
+            android:drawableTop="@drawable/btn_tab_customized_selector"
+            android:text="定制" />
+
+        <RadioButton
+            android:id="@+id/rb_shoppingcart"
+            style="@style/RadioButtonStyle"
+            android:drawableTop="@drawable/btn_tab_service_selector"
+            android:text="购物车" />
+
+
+        <RadioButton
+            android:id="@+id/rb_person"
+            style="@style/RadioButtonStyle"
+            android:drawableTop="@drawable/btn_tab_gova_selector"
+            android:text="我的" />
+    </RadioGroup>
+</LinearLayout>

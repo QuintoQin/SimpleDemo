@@ -1,0 +1,140 @@
+//声明是Android程序
+apply plugin: 'com.android.application'
+//lambda必须加
+apply plugin: 'me.tatarka.retrolambda'
+//ButterKnife
+apply plugin: 'com.jakewharton.butterknife'
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.qinqin.simpledemo"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    //签名配置
+    signingConfigs {
+        //发布版签名配置
+        release {
+            storeFile file("F:/res/android.jks")//密钥文件路径
+            storePassword "android"//密钥文件密码
+            keyAlias "android"//key别名
+            keyPassword "android"//key密码
+        }
+        //debug版签名配置
+        debug {
+            storeFile file("F:/res/android.jks")
+            storePassword "android"
+            keyAlias "android"
+            keyPassword "android"
+        }
+    }
+    //build 类型
+    buildTypes {
+        //正式版本
+        release {
+            //混淆true开启  false关闭
+            minifyEnabled true
+            //对齐Zip 优化程序
+            zipAlignEnabled true
+            //删除无用资源
+            shrinkResources true
+            //是否debug
+            //debuggable false
+            //版本命名后缀
+            //versionNameSuffix "_release"
+            //混淆规则
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //build 签名
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            debuggable false
+            //versionNameSuffix "_debug"
+            //混淆规则
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+    //编译使用的java版本
+    compileOptions {
+        //我这里使用的是1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // 移除lint检查的error
+    lintOptions {
+        abortOnError false
+    }
+    //多渠道打包配置
+//    productFlavors {
+//        yingyongbao {}
+//        xiaomi {}
+//        qh360 {}
+//        baidu {}
+//        wandoujia {}
+//    }
+//
+//    productFlavors.all {
+//        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+//    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        // ... and any other excludes go here
+    }
+}
+//依赖第三方库或者包
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //LeakCanary
+    //ButterKnife
+    //不加会报错,并且必须加在主module里面
+    //CardView
+    //RxPermissions
+    //Banner
+    //PickView
+    //jiecaovideoplayer
+    //photoview
+    //litepal
+    //RxLifeCycle
+    //BaseRecyclerViewAdapterHelper
+    //缓存 DiskLruCache
+    //tinker的核心库
+    //EventBus
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    compile 'com.android.support:cardview-v7:26.0.0-alpha1'
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    compile 'com.youth.banner:banner:1.4.9'
+    compile 'com.contrarywind:Android-PickerView:3.2.4'
+    compile 'fm.jiecao:jiecaovideoplayer:5.5.4'
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'org.litepal.android:core:1.5.1'
+    compile 'com.trello:rxlifecycle:1.0'
+    compile 'com.trello:rxlifecycle-components:1.0'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.13'
+    compile 'com.jakewharton:disklrucache:2.0.2'
+    compile 'com.tencent.tinker:tinker-android-lib:1.7.7'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //module
+    compile project(':common')
+}
+
+//this way we can find the .aar file in libs folder
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_colorgray">#808080</color><!--字体颜色灰-->
+    <color name="text_colorgreen">#0F9296</color><!--字体颜色绿-->
+    <color name="content_color">#f2f2f2</color><!--文本颜色-->
+    <color name="content_top_color">#f9f9f9</color><!--导航栏文本颜色-->
+    <color name="view_line">#CECECE</color><!--线-->
+    <color name="text_gray">#AEAEAE</color><!--灰字-->
+    <color name="text_black">#515151</color><!--黑字-->
+    <color name="province_line_border">#C7C7C7</color>
+</resources>

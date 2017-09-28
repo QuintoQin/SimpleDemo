@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/tab_one"
+        style="@style/CommonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioGroup + Fragment" />
+
+    <Button
+        android:id="@+id/tab_two"
+        style="@style/CommonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TabLayout + Fragment" />
+
+    <Button
+        android:id="@+id/tab_three"
+        style="@style/CommonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BottomNavigationView + Fragment" />
+
+    <Button
+        android:id="@+id/tab_four"
+        style="@style/CommonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FragmentTabHost  + Fragment" />
+
+    <Button
+        android:id="@+id/tab_five"
+        style="@style/CommonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CustomTabView  + Fragment" />
+</LinearLayout>

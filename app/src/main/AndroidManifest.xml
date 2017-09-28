@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qinqin.simpledemo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:name=".SimpleApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".model.splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".model.bottomtablayout.BottomTabActivity" />
+        <activity android:name=".model.bottomtablayout.RadioGroupActivity" />
+        <activity android:name=".model.encryption.RsaAndAesActivity" />
+        <activity android:name=".model.bottomtablayout.TabLayoutActivity" />
+        <activity android:name=".model.bottomtablayout.BottomNavigationActivity" />
+        <activity android:name=".model.bottomtablayout.TabHostActivity" />
+        <activity android:name=".model.bottomtablayout.CustomTabActivity" />
+        <activity android:name=".model.rx.RxJavaActivity" />
+        <activity android:name=".model.rx.RxPermissionsActivity" />
+        <activity android:name=".model.retrofit.RetrofitActivity" />
+        <activity android:name=".model.design.DesignActivity" />
+        <activity android:name=".model.banner.BannerActivity" />
+        <activity android:name=".model.pick.PickViewActivity" />
+        <activity android:name=".model.video.VideoActivity" />
+        <activity
+            android:name=".model.video.JieCaoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name=".model.photo.PhotoViewActivity" />
+        <activity android:name=".model.recyclerview.RecylerViewActivity" />
+        <activity android:name=".model.recyclerview.baserecyleradpter.multpleActivity" />
+        <!-- 友盟多渠道打包 -->
+        <!-- <meta-data -->
+        <!-- android:name="UMENG_CHANNEL" -->
+        <!-- android:value="${UMENG_CHANNEL_VALUE}" /> -->
+
+        <activity android:name=".model.sql.LitePalActivity" />
+        <activity android:name=".model.mvp.MVPActivity" />
+        <activity android:name=".model.webview.WebViewActivity" />
+
+        <!-- 广播 -->
+        <!-- <receiver android:name=".broadcastreceiver.NetworkConnectChangedReceiver" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+
+
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <activity android:name=".model.hotfix.HotFixActivity" />
+        <activity android:name=".model.hotfix.tinker.TinkerActivity" />
+
+        <receiver android:name=".manager.networkstate.NetWorkStateReceiver">
+            <intent-filter>
+
+                <!-- 检测网络变化的acton -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".model.mvp.simplemvp.TheMvpActivity" />
+        <activity android:name=".model.bus.eventbus.FirstActivity" />
+        <activity android:name=".model.bus.eventbus.SecondActivity"></activity>
+    </application>
+
+</manifest>

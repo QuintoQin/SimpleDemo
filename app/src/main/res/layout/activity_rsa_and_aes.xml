@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.qinqin.simpledemo.model.encryption.RsaAndAesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/rsa_pub1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生成的公钥:" />
+
+        <TextView
+            android:id="@+id/rsa_pub2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rsa_pub1"
+            android:layout_marginTop="5dp"
+            android:text="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4X3XnvXbzEWuoEHSB4f12nrhGnyChXGTcpusgZ6vorxk//I6yU3fl1tesqh3QXv/rfN+GpXaJUtoxcVntJMKFQYh9szg5ndM60BDJekJP8NvRqscXzD0f5jxASZa47TI1vyWKQ+XPqd+79bW6pRPL039YzJv9uxZ5T8KvnJLLqQIDAQAB" />
+
+        <TextView
+            android:id="@+id/rsa_pri1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rsa_pub2"
+            android:layout_marginTop="5dp"
+            android:text="生成的密钥:" />
+
+        <TextView
+            android:id="@+id/rsa_pri2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rsa_pri1"
+            android:layout_marginTop="5dp"
+            android:text=" MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBALhfdee9dvMRa6gQdIHh/XaeuEaf
+                                             IKFcZNym6yBnq+ivGT/8jrJTd+XW16yqHdBe/+t834aldolS2jFxWe0kwoVBiH2zODmd0zrQEMl6
+                                             Qk/w29GqxxfMPR/mPEBJlrjtMjW/JYpD5c+p37v1tbqlE8vTf1jMm/27FnlPwq+cksupAgMBAAEC
+                                             gYATDprrRyQiX6yXBIxmWGuQdTtq4UvIIfqy6/XltZGJTX/4oyxEtmfwM9K7ICJQxWECgDfCfRvR
+                                             eeTfs22uG1yXqJLBLpbLVjVaTu3gOQgmNkgP4bOjC4dC6Ha2bM3vVGc+5YJ5J3DeVlir/+t6T7dk
+                                             BGHUy4N+xNlh21ledGNG4QJBANpbfMNCJlWgsNZWxajDIwqeQxnKY1rU2yMXZiMibQlEZWoGw46B
+                                             fzXd653cV1d9JZJKEVnVfuXLfzmCNVuXjnUCQQDYKCzzlxH1jxvXGkOm2pV9eM7SKHBzIlZ1iNCl
+                                             HjPEPOZzJolDQrAryX3ItunLv3lxSOLfOeZx0d23MpPivUnlAkApgf6jd22mFVfIRtJoFEATAqaqvmhImfHWJ9qIj0C+5DuK/iIqcr9l0/u4FGyd+vIrbt0BgK4QrLBQlEnkUVkJAkEA0BHUO2KnMfXgua0ZhAqSraXViCzPGbTq/taE6PxqnjJ1LlDg/jK6fFvHTabs5Gja0LZ1VKVacyOuRcNU4YSOFQJBANAHTkSwH5ubja3DvK2DK80OP8y+IU+BiGtViQDPExLAiWz+lXkAlpL+hThcp7cM9ljdBa9TAFfcvvE5qQa5DGc=" />
+
+        <TextView
+            android:id="@+id/rsa_en"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rsa_pri2"
+            android:layout_marginTop="10dp"
+            android:text="加密后的密文" />
+
+        <TextView
+            android:id="@+id/ras_enTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rsa_en"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/ras_de"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ras_enTv"
+            android:layout_marginTop="10dp"
+            android:text="解密后的文字" />
+
+        <TextView
+            android:id="@+id/ras_detv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ras_de"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/aes_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ras_detv"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/aes_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/aes_tv1"
+            android:layout_marginTop="5dp" />
+    </RelativeLayout>
+</ScrollView>

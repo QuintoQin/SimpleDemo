@@ -89,7 +89,8 @@
 
         <activity android:name=".model.mvp.simplemvp.TheMvpActivity" />
         <activity android:name=".model.bus.eventbus.FirstActivity" />
-        <activity android:name=".model.bus.eventbus.SecondActivity"></activity>
+        <activity android:name=".model.bus.eventbus.SecondActivity" />
+        <activity android:name=".model.recyclerview.baserecyleradpter.HomeRyActivity"></activity>
     </application>
 
 </manifest>

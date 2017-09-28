@@ -3,11 +3,10 @@ package com.qinqin.simpledemo.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.ButterKnife;
 
@@ -23,7 +22,7 @@ import butterknife.ButterKnife;
  * @author 覃勤
  * @version : 1.0
  */
-public abstract class BaseFragment extends RxFragment {
+public abstract class BaseFragment extends Fragment {
     private View parentView;
 
     //标志位 fragment是否可见

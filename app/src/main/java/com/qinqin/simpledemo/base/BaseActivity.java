@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 
 import com.qinqin.simpledemo.R;
 import com.qinqin.common.utils.LogUtils;
@@ -23,7 +24,7 @@ import butterknife.ButterKnife;
  * @author 覃勤
  * @version : 1.0
  */
-public abstract class BaseActivity extends RxAppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
 
     //布局id
@@ -34,8 +35,6 @@ public abstract class BaseActivity extends RxAppCompatActivity {
 
     //初始操作
     protected abstract void initViews(Bundle savedInstanceState);
-
-
 
     /**
      *
@@ -53,7 +52,6 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         initToolbar();
         //初始操作
         initViews(savedInstanceState);
-
     }
 
     @Override

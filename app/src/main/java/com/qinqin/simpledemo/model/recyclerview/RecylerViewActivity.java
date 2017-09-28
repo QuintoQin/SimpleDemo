@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.qinqin.simpledemo.R;
 import com.qinqin.simpledemo.base.BaseActivity;
+import com.qinqin.simpledemo.model.recyclerview.baserecyleradpter.HomeRyActivity;
 
 import butterknife.OnClick;
 
@@ -24,18 +25,23 @@ public class RecylerViewActivity extends BaseActivity {
 
     }
 
+    @OnClick(R.id.home_recyler)
+    void homeRy() {
+        startToActivity(HomeRyActivity.class);
+    }
+
     @OnClick(R.id.multple_recycler)
-    void multple(){
+    void multple() {
 
     }
 
     @OnClick(R.id.pullToRefresh_recycler)
-    void pullToRefresh(){
+    void pullToRefresh() {
 
     }
 
     @OnClick(R.id.section_recycler)
-    void section(){
-        
+    void section() {
+
     }
 }

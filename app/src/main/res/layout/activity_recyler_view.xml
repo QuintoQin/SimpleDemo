@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context="com.qinqin.simpledemo.model.recyclerview.RecylerViewActivity">
 
+    <include layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/home_recyler"
+        style="@style/CommonButton"
+        android:text="Home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/multple_recycler"
         style="@style/CommonButton"

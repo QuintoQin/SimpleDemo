@@ -187,7 +187,7 @@
 }
 
 -keep class com.qinqin.simpledemo.model.pick.bean.**{ *; }
--keep class com.qinqin.common_module.utils.** { *; }
+-keep class com.qinqin.common.utils.** { *; }
 
 #-----------处理第三方依赖库---------
 # ButterKnife
@@ -214,7 +214,10 @@
 # OkHttp3
 -dontwarn com.squareup.okhttp3.**
 -keep class com.squareup.okhttp3.** { *; }
--dontwarn okio.**
+#-dontwarn okio.**
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-dontwarn okhttp3.**
 # Okio
 -dontwarn com.squareup.**
 -dontwarn okio.**
@@ -247,12 +250,18 @@
 #-keep class rx.** {*;}
 #-keep class rx.android.** {*;}
 #-keep class com.jakewharton.rxbinding.** {*;}
-
-
+#Rxlifecyle
+-dontwarn com.trello.**
+-keep class com.trello.**{*;}
 
 # BaseRecyclerViewAdapterHelper
 -keep class com.chad.library.adapter.** {
    *;
+}
+-keep public class * extends com.chad.library.adapter.base.BaseQuickAdapter
+-keep public class * extends com.chad.library.adapter.base.BaseViewHolder
+-keepclassmembers  class **$** extends com.chad.library.adapter.base.BaseViewHolder {
+     <init>(...);
 }
 # banner 的混淆代码
 -keep class com.youth.banner.** {
@@ -264,6 +273,18 @@
 }
 -keep class * extends org.litepal.crud.DataSupport {
     *;
+}
+
+#EventBus
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+}
+-keep enum org.greenrobot.eventbus.ThreadMode { *; }
+
+# Only required if you use AsyncExecutor
+-keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
 }
 
 

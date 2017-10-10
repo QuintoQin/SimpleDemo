@@ -86,6 +86,11 @@ public class BottomNavigationActivity extends BaseActivity {
         switchFragment(oneFragment);
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     //tab选项卡选择
     private void setTabSelection(int index) {
         // 开启一个Fragment事务

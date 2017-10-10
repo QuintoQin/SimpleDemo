@@ -37,6 +37,11 @@ public class LitePalActivity extends BaseActivity {
         find();
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     private void find() {
         DEST mDest = DataSupport.find(DEST.class,1);
 

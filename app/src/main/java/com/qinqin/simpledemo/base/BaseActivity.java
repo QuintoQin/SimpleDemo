@@ -25,16 +25,17 @@ import butterknife.ButterKnife;
  * @version : 1.0
  */
 public abstract class BaseActivity extends AppCompatActivity {
-
-
     //布局id
     protected abstract int getLayoutId();
 
     //初始化toolbar
     protected abstract void initToolbar();
 
-    //初始操作
+    //初始视图
     protected abstract void initViews(Bundle savedInstanceState);
+
+    //初始化数据
+    protected abstract void initData();
 
     /**
      *
@@ -50,8 +51,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         //初始化toolbar
         initToolbar();
-        //初始操作
+        //初始视图
         initViews(savedInstanceState);
+        //初始化数据
+        initData();
     }
 
     @Override

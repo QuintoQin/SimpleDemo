@@ -25,6 +25,11 @@ public class RecylerViewActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     @OnClick(R.id.home_recyler)
     void homeRy() {
         startToActivity(HomeRyActivity.class);

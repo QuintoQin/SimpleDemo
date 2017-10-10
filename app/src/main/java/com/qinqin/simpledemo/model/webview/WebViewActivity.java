@@ -55,6 +55,11 @@ public class WebViewActivity extends BaseActivity {
         initWebView();
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     private void initView() {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         webView = new WebView(getApplicationContext());

@@ -70,17 +70,18 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initViews(Bundle savedInstanceState) {
         mainRecycler.setLayoutManager(new GridLayoutManager(this, 2));
-        initData();
-        initAdapter();
+
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         arrayList = new ArrayList<>();
         for (int i = 0; i < TITLE.length; i++) {
             MainItem mainItem = new MainItem();
             mainItem.setMain_text(TITLE[i]);
             arrayList.add(mainItem);
         }
+        initAdapter();
     }
 
     private void initAdapter() {

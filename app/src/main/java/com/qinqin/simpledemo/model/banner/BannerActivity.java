@@ -53,6 +53,11 @@ public class BannerActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     private void initBanner() {
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(imageUrl);

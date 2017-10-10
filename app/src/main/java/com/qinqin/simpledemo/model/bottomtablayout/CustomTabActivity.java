@@ -82,6 +82,11 @@ public class CustomTabActivity extends BaseActivity implements CustomTabView.OnT
     }
 
     @Override
+    protected void initData() {
+
+    }
+
+    @Override
     public void onTabSelected(View v, int position) {
         setTabSelection(position);
     }

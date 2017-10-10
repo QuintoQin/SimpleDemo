@@ -62,6 +62,11 @@ public class TabLayoutActivity extends BaseActivity {
         initTabLayout();
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     private void initTabLayout() {
         bottomTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

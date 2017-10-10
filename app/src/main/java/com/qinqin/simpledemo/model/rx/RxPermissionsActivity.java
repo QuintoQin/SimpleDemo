@@ -32,6 +32,11 @@ public class RxPermissionsActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     //请求单个权限
     @OnClick(R.id.rx_btn_one)
     void rxBtnOne() {

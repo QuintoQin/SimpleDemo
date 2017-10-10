@@ -23,7 +23,6 @@ import butterknife.ButterKnife;
  * @version : 1.0
  */
 public abstract class BaseFragment extends Fragment {
-    private View parentView;
 
     //标志位 fragment是否可见
     protected boolean isVisible;
@@ -36,13 +35,12 @@ public abstract class BaseFragment extends Fragment {
     protected abstract void initCreateView(Bundle savedInstanceState);
 
     //初始化数据
-
     protected abstract void initData();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        parentView = inflater.inflate(getLayoutId(), container, false);
+        View parentView = inflater.inflate(getLayoutId(), container, false);
         return parentView;
     }
 

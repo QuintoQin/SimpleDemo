@@ -77,6 +77,11 @@ public class TabHostActivity extends BaseActivity implements TabHost.OnTabChange
         tabhost.setCurrentTab(0);
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     //得到Fragement实例
     public static Fragment[] getFragments() {
         Fragment fragments[] = new Fragment[4];

@@ -52,6 +52,11 @@ public class RetrofitActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     public static void startToRetrofit(Context context) {
         Intent intent = new Intent(context, RetrofitActivity.class);
         context.startActivity(intent);

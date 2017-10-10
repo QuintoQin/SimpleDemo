@@ -30,6 +30,11 @@ public class RxJavaActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     @OnClick(R.id.rx_one)
     void rxOne() {
         startActivity(new Intent(RxJavaActivity.this, RxPermissionsActivity.class));

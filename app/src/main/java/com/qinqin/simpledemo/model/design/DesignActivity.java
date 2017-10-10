@@ -68,6 +68,11 @@ public class DesignActivity extends BaseActivity {
         });
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     @OnClick(R.id.snack_btn)
     void snackBar(View view) {
         Snackbar.make(view, "Snackbar comes out", Snackbar.LENGTH_LONG).setAction("Action",

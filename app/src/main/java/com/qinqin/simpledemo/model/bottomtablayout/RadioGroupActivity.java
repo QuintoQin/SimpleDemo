@@ -67,6 +67,11 @@ public class RadioGroupActivity extends BaseActivity {
         initTab();
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     private void initTab() {
         //默认选中第一个按钮
         rgGroups.check(R.id.rb_home);

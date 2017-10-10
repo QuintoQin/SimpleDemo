@@ -62,10 +62,11 @@ public class RsaAndAesActivity extends BaseActivity {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-        initData();
+
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         //RSA
         try {
             //公钥加密，得到密文
@@ -91,4 +92,5 @@ public class RsaAndAesActivity extends BaseActivity {
         aesTv2.setText("密文" + afterText);
         LogUtils.e("密文" + afterText);
     }
+
 }

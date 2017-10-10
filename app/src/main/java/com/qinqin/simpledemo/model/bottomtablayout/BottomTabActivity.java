@@ -48,6 +48,11 @@ public class BottomTabActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

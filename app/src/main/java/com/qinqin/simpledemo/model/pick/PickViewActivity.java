@@ -68,6 +68,11 @@ public class PickViewActivity extends BaseActivity {
         initOptionData();
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     private void initOptionData() {
         /**
          * 注意：如果是添加JavaBean实体数据，则实体类需要实现 IPickerViewData 接口，

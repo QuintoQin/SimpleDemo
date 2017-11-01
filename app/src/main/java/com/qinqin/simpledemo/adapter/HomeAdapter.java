@@ -3,7 +3,7 @@ package com.qinqin.simpledemo.adapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.qinqin.simpledemo.R;
-import com.qinqin.simpledemo.model.recyclerview.baserecyleradpter.HomeItem;
+import com.qinqin.simpledemo.module.recyclerview.baserecyleradpter.HomeItem;
 
 import java.util.List;
 

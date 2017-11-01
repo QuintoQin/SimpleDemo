@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.qinqin.simpledemo.model.retrofit.RetrofitActivity">
+    tools:context="com.qinqin.simpledemo.module.retrofit.RetrofitActivity">
 
     <Button
         android:id="@+id/retrofit_btn"

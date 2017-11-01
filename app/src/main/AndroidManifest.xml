@@ -27,42 +27,42 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".model.splash.SplashActivity">
+        <activity android:name=".module.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".model.bottomtablayout.BottomTabActivity" />
-        <activity android:name=".model.bottomtablayout.RadioGroupActivity" />
-        <activity android:name=".model.encryption.RsaAndAesActivity" />
-        <activity android:name=".model.bottomtablayout.TabLayoutActivity" />
-        <activity android:name=".model.bottomtablayout.BottomNavigationActivity" />
-        <activity android:name=".model.bottomtablayout.TabHostActivity" />
-        <activity android:name=".model.bottomtablayout.CustomTabActivity" />
-        <activity android:name=".model.rx.RxJavaActivity" />
-        <activity android:name=".model.rx.RxPermissionsActivity" />
-        <activity android:name=".model.retrofit.RetrofitActivity" />
-        <activity android:name=".model.design.DesignActivity" />
-        <activity android:name=".model.banner.BannerActivity" />
-        <activity android:name=".model.pick.PickViewActivity" />
-        <activity android:name=".model.video.VideoActivity" />
+        <activity android:name=".module.bottomtablayout.BottomTabActivity" />
+        <activity android:name=".module.bottomtablayout.RadioGroupActivity" />
+        <activity android:name=".module.encryption.RsaAndAesActivity" />
+        <activity android:name=".module.bottomtablayout.TabLayoutActivity" />
+        <activity android:name=".module.bottomtablayout.BottomNavigationActivity" />
+        <activity android:name=".module.bottomtablayout.TabHostActivity" />
+        <activity android:name=".module.bottomtablayout.CustomTabActivity" />
+        <activity android:name=".module.rx.RxJavaActivity" />
+        <activity android:name=".module.rx.RxPermissionsActivity" />
+        <activity android:name=".module.retrofit.RetrofitActivity" />
+        <activity android:name=".module.design.DesignActivity" />
+        <activity android:name=".module.banner.BannerActivity" />
+        <activity android:name=".module.pick.PickViewActivity" />
+        <activity android:name=".module.video.VideoActivity" />
         <activity
-            android:name=".model.video.JieCaoActivity"
+            android:name=".module.video.JieCaoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
-        <activity android:name=".model.photo.PhotoViewActivity" />
-        <activity android:name=".model.recyclerview.RecylerViewActivity" />
-        <activity android:name=".model.recyclerview.baserecyleradpter.multpleActivity" />
+        <activity android:name=".module.photo.PhotoViewActivity" />
+        <activity android:name=".module.recyclerview.RecylerViewActivity" />
+        <activity android:name=".module.recyclerview.baserecyleradpter.multpleActivity" />
         <!-- 友盟多渠道打包 -->
         <!-- <meta-data -->
         <!-- android:name="UMENG_CHANNEL" -->
         <!-- android:value="${UMENG_CHANNEL_VALUE}" /> -->
 
-        <activity android:name=".model.sql.LitePalActivity" />
-        <activity android:name=".model.mvp.MVPActivity" />
-        <activity android:name=".model.webview.WebViewActivity" />
+        <activity android:name=".module.sql.LitePalActivity" />
+        <activity android:name=".module.mvp.MVPActivity" />
+        <activity android:name=".module.webview.WebViewActivity" />
 
         <!-- 广播 -->
         <!-- <receiver android:name=".broadcastreceiver.NetworkConnectChangedReceiver" > -->
@@ -72,8 +72,8 @@
 
         <!-- </intent-filter> -->
         <!-- </receiver> -->
-        <activity android:name=".model.hotfix.HotFixActivity" />
-        <activity android:name=".model.hotfix.tinker.TinkerActivity" />
+        <activity android:name=".module.hotfix.HotFixActivity" />
+        <activity android:name=".module.hotfix.tinker.TinkerActivity" />
 
         <receiver android:name=".manager.networkstate.NetWorkStateReceiver">
             <intent-filter>
@@ -87,10 +87,10 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".model.mvp.simplemvp.TheMvpActivity" />
-        <activity android:name=".model.bus.eventbus.FirstActivity" />
-        <activity android:name=".model.bus.eventbus.SecondActivity" />
-        <activity android:name=".model.recyclerview.baserecyleradpter.HomeRyActivity"></activity>
+        <activity android:name=".module.mvp.simplemvp.TheMvpActivity" />
+        <activity android:name=".module.bus.eventbus.FirstActivity" />
+        <activity android:name=".module.bus.eventbus.SecondActivity" />
+        <activity android:name=".module.recyclerview.baserecyleradpter.HomeRyActivity"></activity>
     </application>
 
 </manifest>

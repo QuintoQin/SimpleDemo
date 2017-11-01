@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.qinqin.simpledemo.model.bus.eventbus.FirstActivity">
+    tools:context="com.qinqin.simpledemo.module.bus.eventbus.FirstActivity">
 
     <include layout="@layout/toolbar" />
 

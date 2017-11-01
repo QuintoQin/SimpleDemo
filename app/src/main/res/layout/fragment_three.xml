@@ -5,7 +5,7 @@
     android:background="@color/yellow"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.qinqin.simpledemo.model.bottomtablayout.fragment.ThreeFragment">
+    tools:context="com.qinqin.simpledemo.module.bottomtablayout.fragment.ThreeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

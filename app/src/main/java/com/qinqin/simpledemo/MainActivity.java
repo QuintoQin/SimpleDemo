@@ -16,25 +16,24 @@ import com.qinqin.simpledemo.adapter.ReMainAdapter;
 import com.qinqin.simpledemo.base.BaseActivity;
 import com.qinqin.simpledemo.bean.MainItem;
 import com.qinqin.simpledemo.common.Constant;
-import com.qinqin.simpledemo.model.banner.BannerActivity;
-import com.qinqin.simpledemo.model.bottomtablayout.BottomTabActivity;
-import com.qinqin.simpledemo.model.bus.eventbus.FirstActivity;
-import com.qinqin.simpledemo.model.design.DesignActivity;
-import com.qinqin.simpledemo.model.encryption.RsaAndAesActivity;
-import com.qinqin.simpledemo.model.mvp.simplemvp.TheMvpActivity;
-import com.qinqin.simpledemo.model.photo.PhotoViewActivity;
-import com.qinqin.simpledemo.model.pick.PickViewActivity;
-import com.qinqin.simpledemo.model.recyclerview.RecylerViewActivity;
-import com.qinqin.simpledemo.model.retrofit.RetrofitActivity;
-import com.qinqin.simpledemo.model.rx.RxJavaActivity;
-import com.qinqin.simpledemo.model.sql.LitePalActivity;
-import com.qinqin.simpledemo.model.video.VideoActivity;
-import com.qinqin.simpledemo.model.webview.WebViewActivity;
+import com.qinqin.simpledemo.module.banner.BannerActivity;
+import com.qinqin.simpledemo.module.bottomtablayout.BottomTabActivity;
+import com.qinqin.simpledemo.module.bus.eventbus.FirstActivity;
+import com.qinqin.simpledemo.module.design.DesignActivity;
+import com.qinqin.simpledemo.module.encryption.RsaAndAesActivity;
+import com.qinqin.simpledemo.module.mvp.simplemvp.TheMvpActivity;
+import com.qinqin.simpledemo.module.photo.PhotoViewActivity;
+import com.qinqin.simpledemo.module.pick.PickViewActivity;
+import com.qinqin.simpledemo.module.recyclerview.RecylerViewActivity;
+import com.qinqin.simpledemo.module.retrofit.RetrofitActivity;
+import com.qinqin.simpledemo.module.rx.RxJavaActivity;
+import com.qinqin.simpledemo.module.sql.LitePalActivity;
+import com.qinqin.simpledemo.module.video.VideoActivity;
+import com.qinqin.simpledemo.module.webview.WebViewActivity;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import rx.Observable;
 
 public class MainActivity extends BaseActivity {
 
@@ -47,7 +46,7 @@ public class MainActivity extends BaseActivity {
             "Retrofit使用", "RxJava使用", "banner控件的使用",
             "RSA DES加密", "PickView", "Video播放",
             "PhotoView", "RecyclerView使用", "litepal",
-            "WebView","热修复","MVP","Dagger2","EventBus"};
+            "WebView", "热修复", "MVP", "Dagger2", "EventBus"};
     private ArrayList<MainItem> arrayList;
 
     @Override
@@ -64,7 +63,6 @@ public class MainActivity extends BaseActivity {
     protected void initToolbar() {
         toolbar.setTitle("主界面");
         setSupportActionBar(toolbar);
-
     }
 
     @Override
@@ -141,9 +139,9 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-
     //声明一个long类型变量：用于存放上一点击“返回键”的时刻
     private long mExitTime;
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //判断用户是否点击了“返回键”

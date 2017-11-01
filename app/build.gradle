@@ -136,5 +136,4 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-
 }

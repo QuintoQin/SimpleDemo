@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.qinqin.simpledemo.model.hotfix.tinker.TinkerActivity">
+    tools:context="com.qinqin.simpledemo.module.hotfix.tinker.TinkerActivity">
 
 </android.support.constraint.ConstraintLayout>

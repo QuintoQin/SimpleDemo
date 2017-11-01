@@ -5,7 +5,7 @@
     android:background="@color/red"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.qinqin.simpledemo.model.bottomtablayout.fragment.TwoFragment">
+    tools:context="com.qinqin.simpledemo.module.bottomtablayout.fragment.TwoFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

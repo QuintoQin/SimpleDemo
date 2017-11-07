@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.qinqin.simpledemo.adapter.ReMainAdapter;
 import com.qinqin.simpledemo.base.BaseActivity;
+
 import com.qinqin.simpledemo.bean.MainItem;
 import com.qinqin.simpledemo.common.Constant;
 import com.qinqin.simpledemo.module.banner.BannerActivity;
@@ -30,6 +31,7 @@ import com.qinqin.simpledemo.module.rx.RxJavaActivity;
 import com.qinqin.simpledemo.module.sql.LitePalActivity;
 import com.qinqin.simpledemo.module.video.VideoActivity;
 import com.qinqin.simpledemo.module.webview.WebViewActivity;
+import com.qinqin.simpledemo.module.mvp.MVPActivity;
 
 import java.util.ArrayList;
 
@@ -128,7 +130,7 @@ public class MainActivity extends BaseActivity {
                     startActivity(new Intent(MainActivity.this, WebViewActivity.class));
                     break;
                 case Constant.MAIN_MVP:
-                    startActivity(new Intent(MainActivity.this, TheMvpActivity.class));
+                    startActivity(new Intent(MainActivity.this, MVPActivity.class));
                     break;
                 case Constant.Main_EventBus:
                     startActivity(new Intent(MainActivity.this, FirstActivity.class));

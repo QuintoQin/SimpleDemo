@@ -1,37 +1,63 @@
 package com.qinqin.simpledemo.module.mvp;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.qinqin.simpledemo.R;
 import com.qinqin.simpledemo.bean.MainModel;
+import com.qinqin.simpledemo.module.mvp.base.BaseActivity;
+import com.qinqin.simpledemo.module.mvp.presenter.DataPresenter;
+import com.qinqin.simpledemo.module.mvp.view.IDataView;
 
-public class MVPActivity extends AppCompatActivity implements MainView{
+import butterknife.BindView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mvp);
-    }
-
-
-    @Override
-    public void getDataSuceess(MainModel mainModel) {
-
-    }
+public class MVPActivity extends BaseActivity<IDataView, DataPresenter> implements IDataView {
+    @BindView(R.id.tv)
+    TextView tv;
+    @BindView(R.id.pb)
+    ProgressBar pb;
 
     @Override
-    public void getDataFail(String msg) {
-
+    protected int getLayoutId() {
+        return R.layout.activity_mvp;
     }
 
     @Override
-    public void showLoading() {
+    protected void initToolbar() {
 
     }
 
     @Override
-    public void hideLoading() {
+    protected void initViews(Bundle savedInstanceState) {
+        mPresenter.load("101010100");
+    }
+
+    @Override
+    protected void initData() {
 
     }
+
+    @Override
+    protected DataPresenter createPresenter() {
+        return new DataPresenter();
+    }
+
+
+    @Override
+    public void loadData(MainModel mainModel) {
+        tv.setText(mainModel.getWeatherinfo().toString());
+    }
+
+    @Override
+    public void showProgress() {
+        pb.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        pb.setVisibility(View.GONE);
+    }
+
 }

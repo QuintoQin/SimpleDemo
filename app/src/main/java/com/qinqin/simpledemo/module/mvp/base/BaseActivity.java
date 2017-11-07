@@ -1,4 +1,4 @@
-package com.qinqin.simpledemo.base;
+package com.qinqin.simpledemo.module.mvp.base;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,10 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.qinqin.simpledemo.R;
-import com.qinqin.common.utils.LogUtils;
 import com.qinqin.common.utils.ToastUtils;
-import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.qinqin.simpledemo.R;
+import com.qinqin.simpledemo.base.*;
 
 import butterknife.ButterKnife;
 
@@ -21,10 +20,14 @@ import butterknife.ButterKnife;
  * Date: 2017/4/25
  * user: user QuintoQin
  * ACTIVITY基类
+ *
  * @author 覃勤
  * @version : 1.0
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCompatActivity {
+    //代理人
+    protected T mPresenter;
+
     //布局id
     protected abstract int getLayoutId();
 
@@ -37,8 +40,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     //初始化数据
     protected abstract void initData();
 
+    //初始化代理人
+    protected abstract T createPresenter();
+
     /**
-     *
      * @param savedInstanceState
      */
     @Override
@@ -50,6 +55,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         //初始化toolbar
         initToolbar();
+        //初始化代理人
+        mPresenter = createPresenter();
+        mPresenter.attachView((V) this);
         //初始视图
         initViews(savedInstanceState);
         //初始化数据
@@ -84,6 +92,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mPresenter.detachView();
     }
 
     /**
@@ -102,6 +111,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 弹出toast 显示时长short
+     *
      * @param msg
      */
     protected void toast(String msg) {
@@ -110,6 +120,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 根据传入的类(class)打开指定的activity
+     *
      * @param pClass
      */
     protected void startToActivity(Class<?> pClass) {

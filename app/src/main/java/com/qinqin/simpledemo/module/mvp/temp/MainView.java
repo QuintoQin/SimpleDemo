@@ -1,4 +1,4 @@
-package com.qinqin.simpledemo.module.mvp;
+package com.qinqin.simpledemo.module.mvp.temp;
 
 import com.qinqin.simpledemo.bean.MainModel;
 import com.qinqin.simpledemo.base.BaseView;

@@ -1,4 +1,4 @@
-package com.qinqin.simpledemo.module.mvp;
+package com.qinqin.simpledemo.module.mvp.simplemvp;
 
 import com.qinqin.simpledemo.bean.MainModel;
 

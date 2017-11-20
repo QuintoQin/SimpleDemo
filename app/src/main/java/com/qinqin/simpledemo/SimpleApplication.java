@@ -20,6 +20,7 @@ import org.litepal.LitePal;
  */
 public class SimpleApplication extends BaseApplication {
     private static SimpleApplication instance;
+    public static String cacheDir = "";
 
     @Override
     public void onCreate() {

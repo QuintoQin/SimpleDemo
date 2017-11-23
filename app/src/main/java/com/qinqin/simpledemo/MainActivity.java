@@ -65,12 +65,12 @@ public class MainActivity extends BaseActivity {
     protected void initToolbar() {
         toolbar.setTitle("主界面");
         setSupportActionBar(toolbar);
+
     }
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
         mainRecycler.setLayoutManager(new GridLayoutManager(this, 2));
-
     }
 
     @Override

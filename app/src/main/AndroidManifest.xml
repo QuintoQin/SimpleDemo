@@ -90,7 +90,8 @@
         <activity android:name=".module.mvp.simplemvp.TheMvpActivity" />
         <activity android:name=".module.bus.eventbus.FirstActivity" />
         <activity android:name=".module.bus.eventbus.SecondActivity" />
-        <activity android:name=".module.recyclerview.baserecyleradpter.HomeRyActivity"></activity>
+        <activity android:name=".module.recyclerview.baserecyleradpter.HomeRyActivity" />
+        <activity android:name=".module.rx.RetrofitOwnActivity"></activity>
     </application>
 
 </manifest>

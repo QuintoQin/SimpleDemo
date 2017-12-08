@@ -19,14 +19,14 @@ android {
     signingConfigs {
         //发布版签名配置
         release {
-            storeFile file("F:/res/android.jks")//密钥文件路径
+            storeFile file("F:/Android/res/android.jks")//密钥文件路径
             storePassword "android"//密钥文件密码
             keyAlias "android"//key别名
             keyPassword "android"//key密码
         }
         //debug版签名配置
         debug {
-            storeFile file("F:/res/android.jks")
+            storeFile file("F:/Android/res/android.jks")
             storePassword "android"
             keyAlias "android"
             keyPassword "android"

@@ -27,6 +27,7 @@ import com.qinqin.simpledemo.module.photo.PhotoViewActivity;
 import com.qinqin.simpledemo.module.pick.PickViewActivity;
 import com.qinqin.simpledemo.module.recyclerview.RecylerViewActivity;
 import com.qinqin.simpledemo.module.retrofit.RetrofitActivity;
+import com.qinqin.simpledemo.module.rx.RetrofitOwnActivity;
 import com.qinqin.simpledemo.module.rx.RxJavaActivity;
 import com.qinqin.simpledemo.module.sql.LitePalActivity;
 import com.qinqin.simpledemo.module.video.VideoActivity;
@@ -102,7 +103,7 @@ public class MainActivity extends BaseActivity {
                     RetrofitActivity.startToRetrofit(MainActivity.this);
                     break;
                 case Constant.MAIN_RXJAVA:
-                    startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
+                    startActivity(new Intent(MainActivity.this, RetrofitOwnActivity.class));
                     break;
                 case Constant.MAIN_BANNER:
                     startActivity(new Intent(MainActivity.this, BannerActivity.class));

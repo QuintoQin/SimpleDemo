@@ -10,6 +10,7 @@ import com.google.gson.JsonParseException;
 
 import com.qinqin.common.R;
 import com.qinqin.common.utils.AppUtils;
+import com.qinqin.common.utils.LogUtils;
 import com.qinqin.common.utils.NetworkUtils;
 import com.qinqin.common.utils.Utils;
 
@@ -43,7 +44,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitHelper {
     private volatile static Retrofit retrofitInstance = null;
-    private static final String BASE_URL = "http://www.weather.com.cn/";
+    private static final String BASE_URL = "http://tb.moonvila.com/api/";
 
     /**
      * 创建Retrofit请求Api
@@ -91,8 +92,13 @@ public class RetrofitHelper {
      */
     private static OkHttpClient buildOKHttpClient() {
         // 添加日志拦截器，非debug模式不打印任何日志
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        loggingInterceptor.setLevel(AppUtils.isDev() ? HttpLoggingInterceptor.Level.HEADERS : HttpLoggingInterceptor.Level.NONE);
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                LogUtils.e(message);
+            }
+        });
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
 
         return new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)                       // 添加日志拦截器

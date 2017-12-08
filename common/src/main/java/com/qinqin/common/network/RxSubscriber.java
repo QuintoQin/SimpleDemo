@@ -2,6 +2,7 @@ package com.qinqin.common.network;
 
 
 import com.qinqin.common.network.help.ApiException;
+import com.qinqin.common.utils.LogUtils;
 import com.qinqin.common.utils.NetworkUtils;
 import com.qinqin.common.utils.ToastUtils;
 
@@ -39,6 +40,8 @@ public abstract class RxSubscriber<T> implements Observer<T> {
 
     @Override
     public void onError(@NonNull Throwable e) {
+
+        LogUtils.e(e);
         if (!NetworkUtils.isConnected()) {
             ToastUtils.showLong("网络已断开");
         } else if (e instanceof ApiException) {

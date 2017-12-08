@@ -26,7 +26,7 @@ public class MainPresenter extends BasePresenter<MainView> {
 //    }
 //
 //    public void loadData(String cityId) {
-//        RetrofitHelper.createApi(Api.class).loadData(cityId)
+//        RetrofitHelper.createApi(UserApi.class).loadData(cityId)
 //                .compose(RxSchedulersHelper.observeOnMainThread())
 //                .subscribe(new RxSubscriber<MainModel>() {
 //                    @Override

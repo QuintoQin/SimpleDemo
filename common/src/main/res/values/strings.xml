@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Common</string>
+    <string name="cache">cache</string>
+    <string name="response_return_error">连接超时，请重试</string>
+    <string name="bad_network">HTTP错误</string>
+    <string name="connect_error">连接错误</string>
+    <string name="connect_timeout">连接超时</string>
+    <string name="parse_error">解析错误</string>
+    <string name="unkown_error">未知错误</string>
 </resources>

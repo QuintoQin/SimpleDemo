@@ -1,5 +1,6 @@
 package com.qinqin.simpledemo.module.mvp.simplemvp;
 
+import com.qinqin.common.network.RxCommonSubscriber;
 import com.qinqin.simpledemo.module.mvp.simplemvp.base.BasePresenter;
 import com.qinqin.common.network.RetrofitHelper;
 import com.qinqin.common.network.RxSubscriber;
@@ -35,7 +36,7 @@ public class MainPresenter extends BasePresenter<MainView> {
         RetrofitHelper.createApi(ApiStores.class)
                 .loadDataByRetrofitRxjava(cityId)
                 .compose(RxSchedulersHelper.observeOnMainThread())
-                .subscribe(new RxSubscriber<MainModel>() {
+                .subscribe(new RxCommonSubscriber<MainModel>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
                         super.onSubscribe(d);
@@ -71,7 +72,7 @@ public class MainPresenter extends BasePresenter<MainView> {
     public void test() {
         Observable.interval(2, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new RxSubscriber<Long>() {
+                .subscribe(new RxCommonSubscriber<Long>() {
 
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {

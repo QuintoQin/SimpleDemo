@@ -9,6 +9,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 
 import com.qinqin.common.R;
+import com.qinqin.common.network.api.Api;
 import com.qinqin.common.utils.AppUtils;
 import com.qinqin.common.utils.LogUtils;
 import com.qinqin.common.utils.NetworkUtils;
@@ -16,7 +17,9 @@ import com.qinqin.common.utils.Utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URLDecoder;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -32,7 +35,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Description： SimpleDemo
+ * Description： RetofitHelper
  * Copyright (c)
  * This program is protected by copyright laws.
  * package: com.qinqin.base.network
@@ -44,7 +47,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitHelper {
     private volatile static Retrofit retrofitInstance = null;
-    private static final String BASE_URL = "http://tb.moonvila.com/api/";
+    //private static final String BASE_URL = "";
 
     /**
      * 创建Retrofit请求Api
@@ -71,7 +74,7 @@ public class RetrofitHelper {
                 if (null == retrofitInstance) { // 双重检验锁,仅第一次调用时实例化
                     retrofitInstance = new Retrofit.Builder()
                             // baseUrl总是以/结束，@URL不要以/开头
-                            .baseUrl(BASE_URL)
+                            .baseUrl(Api.API_SERVER_URL)
                             // 使用OkHttp Client
                             .client(buildOKHttpClient())
                             // 集成RxJava处理
@@ -92,13 +95,9 @@ public class RetrofitHelper {
      */
     private static OkHttpClient buildOKHttpClient() {
         // 添加日志拦截器，非debug模式不打印任何日志
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
-            @Override
-            public void log(String message) {
-                LogUtils.e(message);
-            }
-        });
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(message ->
+                LogUtils.e("OKHttp-----", message));
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         return new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)                       // 添加日志拦截器
@@ -119,9 +118,9 @@ public class RetrofitHelper {
      */
     private static Cache getCache() {
         // 获取缓存目标,SD卡
-        File cacheFile = new File(Utils.getContext().getCacheDir(), Utils.getContext().getResources().getString(R.string.app_name));
-        // 创建缓存对象,最大缓存50m
-        return new Cache(cacheFile, 1024 * 1024 * 20);
+        File cacheFile = new File(Utils.getContext().getCacheDir(), Utils.getContext().getResources().getString(R.string.cache));
+        // 创建缓存对象,最大缓存100m
+        return new Cache(cacheFile, 1024 * 1024 * 100);
     }
 
     /**
@@ -130,42 +129,42 @@ public class RetrofitHelper {
      * @return Interceptor
      */
     private static Interceptor buildCacheInterceptor() {
-        return new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                CacheControl.Builder cacheBuilder = new CacheControl.Builder();
-                cacheBuilder.maxAge(0, TimeUnit.SECONDS);
-                cacheBuilder.maxStale(365,TimeUnit.DAYS);
-                CacheControl cacheControl = cacheBuilder.build();
+        return chain -> {
+            CacheControl.Builder cacheBuilder = new CacheControl.Builder();
+            cacheBuilder.maxAge(0, TimeUnit.SECONDS);
+            cacheBuilder.maxStale(365, TimeUnit.DAYS);
+            //CacheControl cacheControl = cacheBuilder.build();
 
-                Request request = chain.request();
-                // 无网络连接时请求从缓存中读取
-                if (!NetworkUtils.isConnected()) {
-                    request = request.newBuilder()
-                            .cacheControl(cacheControl)
-                            .build();
-                }
-
-                // 响应内容处理
-                // 在线时缓存5分钟
-                // 离线时缓存4周
-                Response response = chain.proceed(request);
-                if (NetworkUtils.isConnected()) {
-                    int maxAge = 300;
-                    response.newBuilder()
-                            .header("Cache-Control", "public, max-age=" + maxAge)
-                            .removeHeader("Pragma")// 清除头信息，因为服务器如果不支持，会返回一些干扰信息，不清除下面无法生效
-                            .build();
-                } else {
-                    // 无网络时，设置超时为4周
-                    int maxStale = 60 * 60 * 24 * 28;
-                    response.newBuilder()
-                            .header("Cache-Control", "public, only-if-cached, max-stale=" + maxStale)
-                            .removeHeader("Pragma")
-                            .build();
-                }
-                return response;
+            Request request = chain.request();
+            // 无网络连接时请求从缓存中读取
+            if (!NetworkUtils.isConnected()) {
+                request = request.newBuilder()
+                        .cacheControl(CacheControl.FORCE_CACHE)
+                        .build();
+                LogUtils.e("okhttp", "no network");
             }
+
+            // 响应内容处理
+            // 在线时缓存5分钟
+            // 离线时缓存4周
+            Response response = chain.proceed(request);
+            if (NetworkUtils.isConnected()) {
+                //在线
+                int maxAge = 300;
+                response.newBuilder()
+                        .header("Cache-Control", "public, max-age=" + maxAge)
+                        .removeHeader("Pragma")// 清除头信息，因为服务器如果不支持，会返回一些干扰信息，不清除下面无法生效
+                        .build();
+
+            } else {
+                // 无网络时，设置超时为4周
+                int maxStale = 60 * 60 * 24 * 28;
+                response.newBuilder()
+                        .header("Cache-Control", "public, only-if-cached, max-stale=" + maxStale)
+                        .removeHeader("Pragma")
+                        .build();
+            }
+            return response;
         };
     }
 
@@ -179,12 +178,7 @@ public class RetrofitHelper {
         builder.setLenient();
 
         // 注册类型转换适配器
-        builder.registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
-            @Override
-            public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-                return null == json ? null : new Date(json.getAsLong());
-            }
-        });
+        builder.registerTypeAdapter(Date.class, (JsonDeserializer<Date>) (json, typeOfT, context) -> null == json ? null : new Date(json.getAsLong()));
 
         Gson gson = builder.create();
         return GsonConverterFactory.create(gson);

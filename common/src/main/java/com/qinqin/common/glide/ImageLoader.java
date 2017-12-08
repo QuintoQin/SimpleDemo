@@ -11,7 +11,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.SimpleTarget;
 
 /**
- * Description： SimpleDemo
+ * Description： ImageLoader
  * Copyright (c)
  * This program is protected by copyright laws.
  * package: com.qinqin.simpledemo.manager.imageloader

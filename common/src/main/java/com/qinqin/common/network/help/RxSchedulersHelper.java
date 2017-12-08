@@ -11,7 +11,8 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by 26050 on 2017/9/26.
+ * Created by ${user} on 2017/9/26.
+ * QinQin
  */
 
 public class RxSchedulersHelper {

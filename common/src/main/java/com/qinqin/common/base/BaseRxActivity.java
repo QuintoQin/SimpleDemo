@@ -3,10 +3,6 @@ package com.qinqin.common.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.qinqin.common.network.help.HttpResult;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableTransformer;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 

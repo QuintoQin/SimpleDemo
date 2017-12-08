@@ -22,7 +22,7 @@ import com.qinqin.simpledemo.module.bottomtablayout.BottomTabActivity;
 import com.qinqin.simpledemo.module.bus.eventbus.FirstActivity;
 import com.qinqin.simpledemo.module.design.DesignActivity;
 import com.qinqin.simpledemo.module.encryption.RsaAndAesActivity;
-import com.qinqin.simpledemo.module.mvp.simplemvp.TheMvpActivity;
+import com.qinqin.simpledemo.module.mvp.MVPActivity;
 import com.qinqin.simpledemo.module.photo.PhotoViewActivity;
 import com.qinqin.simpledemo.module.pick.PickViewActivity;
 import com.qinqin.simpledemo.module.recyclerview.RecylerViewActivity;
@@ -32,7 +32,7 @@ import com.qinqin.simpledemo.module.rx.RxJavaActivity;
 import com.qinqin.simpledemo.module.sql.LitePalActivity;
 import com.qinqin.simpledemo.module.video.VideoActivity;
 import com.qinqin.simpledemo.module.webview.WebViewActivity;
-import com.qinqin.simpledemo.module.mvp.MVPActivity;
+
 
 import java.util.ArrayList;
 

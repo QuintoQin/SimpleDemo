@@ -1,10 +1,19 @@
-package com.qinqin.common.network.help;
+package com.qinqin.common.network.entity;
 
 /**
- * Created by 26050 on 2017/9/26.
+ * Created by 26050 on 2017/12/8.
+ * QinQin
+ * 数据基本返回类型
  */
 
-public class HttpResult<T> {
+/**
+ * {
+ * "code": 200,
+ * "message": "成功",
+ * "data": {}
+ * }
+ */
+public class BasicResponse<T> {
     private int code;
     private String message;
     private T data;

@@ -1,7 +1,5 @@
 //声明是Android程序
 apply plugin: 'com.android.application'
-//lambda必须加
-apply plugin: 'me.tatarka.retrolambda'
 //ButterKnife
 apply plugin: 'com.jakewharton.butterknife'
 android {

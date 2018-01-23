@@ -1,12 +1,7 @@
 package com.qinqin.simpledemo.module.mvp.temp;
 
-import com.qinqin.simpledemo.bean.MainModel;
-import com.qinqin.simpledemo.base.BasePresenter;
-import com.qinqin.common.network.RetrofitHelper;
-import com.qinqin.common.network.RxSubscriber;
-import com.qinqin.common.network.help.RxSchedulersHelper;
-import com.qinqin.common.utils.ToastUtils;
 
+import com.qinqin.simpledemo.module.mvp.base.BasePresenter;
 
 /**
  * Description： SimpleDemo

@@ -1,7 +1,7 @@
 package com.qinqin.simpledemo.module.mvp.temp;
 
 import com.qinqin.simpledemo.bean.MainModel;
-import com.qinqin.simpledemo.base.BaseView;
+import com.qinqin.simpledemo.module.mvp.simplemvp.base.BaseView;
 
 /**
  * Description： SimpleDemo

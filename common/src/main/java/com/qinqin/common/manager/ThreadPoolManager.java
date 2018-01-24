@@ -1,4 +1,4 @@
-package com.qinqin.common.thread;
+package com.qinqin.common.manager;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.Executors;

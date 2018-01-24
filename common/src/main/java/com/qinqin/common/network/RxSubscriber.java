@@ -28,7 +28,7 @@ import retrofit2.HttpException;
  * @author QinQin
  * @version 1.0.0
  */
-public abstract class RxSubscriber<T extends BasicResponse<T>> implements Observer<T> {
+public abstract class RxSubscriber<T> implements Observer<BasicResponse<T>> {
 
     @Override
     public void onSubscribe(Disposable d) {
@@ -36,21 +36,20 @@ public abstract class RxSubscriber<T extends BasicResponse<T>> implements Observ
     }
 
     @Override
-    public void onNext(T response) {
-        if (response.getCode() == 200) {
+    public void onNext(BasicResponse<T> response) {
+        LogUtils.e("onNext", response.getStatus());
+        if (response.getStatus() == 200) {
             //请求成功
-            onSuccess(response);
+            onSuccess(response.getData());
         } else {
             //请求失败
-            onFail(response);
+            onFail(response.getMessage());
         }
-
     }
 
     @Override
     public void onError(Throwable e) {
-        LogUtils.e("Retrofit", e.getMessage());
-
+        LogUtils.e("onError", e.getMessage());
         if (e instanceof HttpException) {     //HTTP错误
             onException(CodeException.BAD_NETWORK);
         } else if (e instanceof ConnectException
@@ -70,7 +69,7 @@ public abstract class RxSubscriber<T extends BasicResponse<T>> implements Observ
     // 忽略操作，需要可覆写该方法
     @Override
     public void onComplete() {
-
+        LogUtils.e("onComplete", "完成");
     }
 
     /**
@@ -83,10 +82,9 @@ public abstract class RxSubscriber<T extends BasicResponse<T>> implements Observ
     /**
      * 服务器返回数据，但响应码不为200
      *
-     * @param response 服务器返回的数据
+     * @param message 服务器返回的数据
      */
-    public void onFail(T response) {
-        String message = response.getMessage();
+    public void onFail(String message) {
         if (TextUtils.isEmpty(message)) {
             ToastUtils.showShort(R.string.response_return_error);
         } else {
@@ -97,6 +95,7 @@ public abstract class RxSubscriber<T extends BasicResponse<T>> implements Observ
     /**
      * 请求异常 所有请求
      * 异常原因
+     *
      * @param reason
      */
     public void onException(int reason) {

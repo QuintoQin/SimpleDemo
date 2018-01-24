@@ -3,6 +3,8 @@ package com.qinqin.common.base;
 import android.app.Application;
 
 import com.orhanobut.hawk.Hawk;
+import com.orhanobut.hawk.HawkBuilder;
+import com.orhanobut.hawk.NoEncryption;
 import com.qinqin.common.utils.LogUtils;
 import com.qinqin.common.utils.Utils;
 
@@ -26,7 +28,8 @@ public class BaseApplication extends Application {
         super.onCreate();
         instance = this;
         Utils.init(this);
-        Hawk.init(this).build();
+        Hawk.init(this)
+                .build();
         new LogUtils.Builder().setBorderSwitch(true);
     }
 

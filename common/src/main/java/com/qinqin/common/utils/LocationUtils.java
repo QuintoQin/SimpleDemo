@@ -1,5 +1,6 @@
 package com.qinqin.common.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
@@ -79,6 +80,7 @@ public final class LocationUtils {
      * @param listener    位置刷新的回调接口
      * @return {@code true}: 初始化成功<br>{@code false}: 初始化失败
      */
+    @SuppressLint("MissingPermission")
     public static boolean register(long minTime, long minDistance, OnLocationChangeListener listener) {
         if (listener == null) return false;
         mLocationManager = (LocationManager) Utils.getContext().getSystemService(Context.LOCATION_SERVICE);
@@ -88,7 +90,7 @@ public final class LocationUtils {
             return false;
         }
         String provider = mLocationManager.getBestProvider(getCriteria(), true);
-        Location location = mLocationManager.getLastKnownLocation(provider);
+        @SuppressLint("MissingPermission") Location location = mLocationManager.getLastKnownLocation(provider);
         if (location != null) listener.getLastKnownLocation(location);
         if (myLocationListener == null) myLocationListener = new MyLocationListener();
         mLocationManager.requestLocationUpdates(provider, minTime, minDistance, myLocationListener);

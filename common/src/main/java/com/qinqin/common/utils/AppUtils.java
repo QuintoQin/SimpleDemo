@@ -482,13 +482,13 @@ public final class AppUtils {
      */
     public static class AppInfo {
 
-        private String   name;
+        private String name;
         private Drawable icon;
-        private String   packageName;
-        private String   packagePath;
-        private String   versionName;
-        private int      versionCode;
-        private boolean  isSystem;
+        private String packageName;
+        private String packagePath;
+        private String versionName;
+        private int versionCode;
+        private boolean isSystem;
 
         public Drawable getIcon() {
             return icon;
@@ -697,5 +697,20 @@ public final class AppUtils {
         return BuildConfig.BUILD_TYPE.equalsIgnoreCase("debug");
     }
 
-
+    /**
+     * 检查手机上是否安装了指定的软件
+     * @param packageName：应用包名
+     * @return
+     */
+    public static boolean isInstalled(String packageName) {
+        final PackageManager packageManager = Utils.getContext().getPackageManager();
+        List<PackageInfo> packageInfos = packageManager.getInstalledPackages(0);
+        if (packageInfos != null) {
+            for (int i = 0; i < packageInfos.size(); i++) {
+                String pkName = packageInfos.get(i).packageName;
+                if (pkName.equals(packageName)) return true;
+            }
+        }
+        return false;
+    }
 }

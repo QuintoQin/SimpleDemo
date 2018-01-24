@@ -10,7 +10,7 @@ import io.reactivex.disposables.Disposable;
  * Created by 26050 on 2017/9/27.
  */
 
-public class BaseRxActivity extends AppCompatActivity{
+public class BaseRxActivity extends AppCompatActivity {
 
     private CompositeDisposable disposables2Stop;// 管理Stop取消订阅者者
     private CompositeDisposable disposables2Destroy;// 管理Destroy取消订阅者者
@@ -45,7 +45,7 @@ public class BaseRxActivity extends AppCompatActivity{
         }
     }
 
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (disposables2Destroy != null) {
             throw new IllegalStateException("onCreate called multiple times");
@@ -53,7 +53,7 @@ public class BaseRxActivity extends AppCompatActivity{
         disposables2Destroy = new CompositeDisposable();
     }
 
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
         if (disposables2Stop != null) {
             throw new IllegalStateException("onStart called multiple times");
@@ -61,7 +61,7 @@ public class BaseRxActivity extends AppCompatActivity{
         disposables2Stop = new CompositeDisposable();
     }
 
-    public void onStop() {
+    protected void onStop() {
         super.onStop();
         if (disposables2Stop == null) {
             throw new IllegalStateException("onStop called multiple times or onStart not called");
@@ -70,7 +70,7 @@ public class BaseRxActivity extends AppCompatActivity{
         disposables2Stop = null;
     }
 
-    public void onDestroy() {
+    protected void onDestroy() {
         super.onDestroy();
         if (disposables2Destroy == null) {
             throw new IllegalStateException(

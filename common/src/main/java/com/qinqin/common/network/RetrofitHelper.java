@@ -47,7 +47,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitHelper {
     private volatile static Retrofit retrofitInstance = null;
-    //private static final String BASE_URL = "";
 
     /**
      * 创建Retrofit请求Api
@@ -74,7 +73,7 @@ public class RetrofitHelper {
                 if (null == retrofitInstance) { // 双重检验锁,仅第一次调用时实例化
                     retrofitInstance = new Retrofit.Builder()
                             // baseUrl总是以/结束，@URL不要以/开头
-                            .baseUrl(Api.API_SERVER_URL)
+                            .baseUrl(Api.HOST)
                             // 使用OkHttp Client
                             .client(buildOKHttpClient())
                             // 集成RxJava处理

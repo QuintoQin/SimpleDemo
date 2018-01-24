@@ -8,22 +8,22 @@ package com.qinqin.common.network.entity;
 
 /**
  * {
- * "code": 200,
+ * "status": 200,
  * "message": "成功",
  * "data": {}
  * }
  */
 public class BasicResponse<T> {
-    private int code;
+    private int status;
     private String message;
     private T data;
 
-    public int getCode() {
-        return code;
+    public int getStatus() {
+        return status;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getMessage() {

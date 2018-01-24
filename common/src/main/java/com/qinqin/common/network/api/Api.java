@@ -7,8 +7,5 @@ package com.qinqin.common.network.api;
 
 public interface Api {
     //主机host地址
-    String HOST = "http://tb.moonvila.com/api/";
-    String API_SERVER_URL = "http://www.weather.com.cn/";
-
-    //String API_SERVER_URL = HOST + "api/data/";
+    String HOST = "http://192.168.1.166/api_app/";
 }

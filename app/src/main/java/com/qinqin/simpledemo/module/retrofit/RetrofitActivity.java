@@ -6,15 +6,20 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.qinqin.common.utils.LogUtils;
 import com.qinqin.simpledemo.R;
 import com.qinqin.simpledemo.base.BaseActivity;
 import com.qinqin.simpledemo.bean.ActivityCenterInfo;
+import com.qinqin.simpledemo.helper.RxHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Observer;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 
 
 public class RetrofitActivity extends BaseActivity {
@@ -59,48 +64,25 @@ public class RetrofitActivity extends BaseActivity {
 
     @OnClick(R.id.retrofit_btn)
     void btn() {
-//        RetrofitHelper.createApi(CenterService.class)
-//                .getActivityCenterList(page, pagesize)
-//                .compose(bindToLifecycle())
-//                .compose(RxSchedulersHelper.observeOnMainThread())
-//                .map(activityCenterInfo -> activityCenterInfo.getList())
-//                .flatMap(new Func1<List<ActivityCenterInfo.ListBean>, Observable<ActivityCenterInfo.ListBean>>() {
-//                    @Override
-//                    public Observable<ActivityCenterInfo.ListBean> call(List<ActivityCenterInfo.ListBean> listBeen) {
-//                        return Observable.from(listBeen);
-//                    }
-//                })
-//                .subscribe(new Subscriber<ActivityCenterInfo.ListBean>() {
-//                    @Override
-//                    public void onCompleted() {
-//                        retrofitTv.setText(sb.toString());
-//                        LogUtils.e("onCompleted");
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//                        ToastUtils.showShort("网络错误");
-//                    }
-//
-//                    @Override
-//                    public void onNext(ActivityCenterInfo.ListBean listBean) {
-//                        activityCenters.add(listBean);
-//                        sb.append(listBean.toString());
-//                    }
-//                });
-//        .subscribe(new RxSubscriber<ActivityCenterInfo.ListBean>() {
-//            @Override
-//            public void onSuccess(ActivityCenterInfo.ListBean listBean) {
-//                activityCenters.add(listBean);
-//            }
-//        });
+        RxHelper.countdown(10).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+            }
 
-//                .subscribe(activityCenterInfo -> {
-//                    activityCenters.addAll(activityCenterInfo.getList());
-//                    for (ActivityCenterInfo.ListBean data : activityCenters) {
-//                        sb.append(data.toString());
-//                    }
-//                    retrofitTv.setText(sb.toString());
-//                });
+            @Override
+            public void onNext(@NonNull Integer integer) {
+                LogUtils.e(String.valueOf(integer));
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
     }
 }

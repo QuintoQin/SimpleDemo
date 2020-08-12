@@ -1,7 +1,7 @@
 package com.qinqin.simpledemo.module.photo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.qinqin.simpledemo.R;
 import com.github.chrisbanes.photoview.PhotoView;

@@ -1,12 +1,9 @@
 package com.qinqin.simpledemo.module.rx;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.qinqin.common.network.RetrofitHelper;
-import com.qinqin.common.network.RxSubscriber;
-import com.qinqin.common.network.help.RxSchedulersHelper;
-import com.qinqin.common.utils.LogUtils;
+import com.app.common.utils.LogUtils;
 import com.qinqin.simpledemo.R;
 
 import retrofit2.Call;

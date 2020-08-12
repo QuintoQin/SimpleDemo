@@ -4,8 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.qinqin.common.utils.NetworkUtils;
-import com.qinqin.common.utils.ToastUtils;
+import com.app.common.utils.NetworkUtils;
+import com.app.common.utils.ToastUtils;
 
 /**
  * Description： SimpleDemo

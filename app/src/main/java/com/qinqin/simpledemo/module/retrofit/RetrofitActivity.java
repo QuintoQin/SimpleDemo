@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.qinqin.common.utils.LogUtils;
+import com.app.common.utils.LogUtils;
 import com.qinqin.simpledemo.R;
 import com.qinqin.simpledemo.base.BaseActivity;
 import com.qinqin.simpledemo.bean.ActivityCenterInfo;

@@ -1,11 +1,11 @@
 package com.qinqin.simpledemo.module.bottomtablayout;
 
 
-import android.support.annotation.IdRes;
-import android.support.v4.app.FragmentTransaction;
+import androidx.annotation.IdRes;
+import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;

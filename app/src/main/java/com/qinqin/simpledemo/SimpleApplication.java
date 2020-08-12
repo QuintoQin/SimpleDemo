@@ -2,7 +2,7 @@ package com.qinqin.simpledemo;
 
 import android.os.StrictMode;
 
-import com.qinqin.common.base.BaseApplication;
+import com.app.common.MyApplication;
 import com.squareup.leakcanary.LeakCanary;
 
 import org.litepal.LitePal;
@@ -18,7 +18,7 @@ import org.litepal.LitePal;
  * @author 覃勤
  * @version : 1.0
  */
-public class SimpleApplication extends BaseApplication {
+public class SimpleApplication extends MyApplication {
     private static SimpleApplication instance;
     public static String cacheDir = "";
 

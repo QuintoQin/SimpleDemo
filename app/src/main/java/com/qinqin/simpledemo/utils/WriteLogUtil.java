@@ -1,7 +1,7 @@
 package com.qinqin.simpledemo.utils;
 
-import com.qinqin.common.utils.LogUtils;
-import com.qinqin.common.utils.TimeUtils;
+import com.app.common.utils.LogUtils;
+import com.app.common.utils.TimeUtils;
 import com.qinqin.simpledemo.SimpleApplication;
 
 import java.io.BufferedWriter;

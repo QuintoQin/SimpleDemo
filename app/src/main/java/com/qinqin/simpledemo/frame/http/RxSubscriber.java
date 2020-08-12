@@ -1,8 +1,8 @@
 package com.qinqin.simpledemo.frame.http;
 
 
-import com.qinqin.common.utils.NetworkUtils;
-import com.qinqin.common.utils.ToastUtils;
+import com.app.common.utils.NetworkUtils;
+import com.app.common.utils.ToastUtils;
 
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;

@@ -2,7 +2,7 @@ package com.qinqin.simpledemo.module.bottomtablayout.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.qinqin.simpledemo.R;
 import com.qinqin.simpledemo.base.BaseFragment;

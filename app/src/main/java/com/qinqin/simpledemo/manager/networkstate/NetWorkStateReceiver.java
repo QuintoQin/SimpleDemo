@@ -8,8 +8,8 @@ import android.net.Network;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
-import com.qinqin.common.utils.LogUtils;
-import com.qinqin.common.utils.ToastUtils;
+import com.app.common.utils.LogUtils;
+import com.app.common.utils.ToastUtils;
 
 /**
  * Description： SimpleDemo

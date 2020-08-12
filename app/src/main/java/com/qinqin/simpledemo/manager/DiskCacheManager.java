@@ -4,8 +4,8 @@ import android.content.Context;
 import android.os.Environment;
 
 import com.jakewharton.disklrucache.DiskLruCache;
-import com.qinqin.common.utils.AppUtils;
-import com.qinqin.common.utils.EncryptUtils;
+import com.app.common.utils.AppUtils;
+import com.app.common.utils.EncryptUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

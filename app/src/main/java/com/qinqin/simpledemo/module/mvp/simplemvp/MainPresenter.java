@@ -1,11 +1,11 @@
 package com.qinqin.simpledemo.module.mvp.simplemvp;
 
-import com.qinqin.common.network.RxCommonSubscriber;
+import com.app.common.network.RxCommonSubscriber;
 import com.qinqin.simpledemo.module.mvp.simplemvp.base.BasePresenter;
-import com.qinqin.common.network.RetrofitHelper;
-import com.qinqin.common.network.RxSubscriber;
-import com.qinqin.common.network.help.RxSchedulersHelper;
-import com.qinqin.common.utils.LogUtils;
+import com.app.common.network.RetrofitHelper;
+import com.app.common.network.RxSubscriber;
+import com.app.common.network.help.RxSchedulersHelper;
+import com.app.common.utils.LogUtils;
 
 import java.util.concurrent.TimeUnit;
 

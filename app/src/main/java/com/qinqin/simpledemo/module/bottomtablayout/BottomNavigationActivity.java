@@ -1,11 +1,11 @@
 package com.qinqin.simpledemo.module.bottomtablayout;
 
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.FrameLayout;
 
 import com.qinqin.simpledemo.R;
@@ -14,7 +14,7 @@ import com.qinqin.simpledemo.module.bottomtablayout.fragment.FourFragment;
 import com.qinqin.simpledemo.module.bottomtablayout.fragment.OneFragment;
 import com.qinqin.simpledemo.module.bottomtablayout.fragment.ThreeFragment;
 import com.qinqin.simpledemo.module.bottomtablayout.fragment.TwoFragment;
-import com.qinqin.common.utils.ToastUtils;
+import com.app.common.utils.ToastUtils;
 
 import butterknife.BindView;
 

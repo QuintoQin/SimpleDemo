@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.holder.Holder;
-import com.qinqin.common.glide.ImageLoader;
+import com.app.common.glide.ImageLoader;
 
 /**
  * Description： SimpleDemo

@@ -1,10 +1,10 @@
 package com.qinqin.simpledemo.module.video;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.qinqin.simpledemo.R;
-import com.qinqin.common.glide.ImageLoader;
+import com.app.common.glide.ImageLoader;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;

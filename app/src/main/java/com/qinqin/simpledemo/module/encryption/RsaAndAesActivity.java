@@ -5,9 +5,9 @@ import android.widget.TextView;
 
 import com.qinqin.simpledemo.R;
 import com.qinqin.simpledemo.base.BaseActivity;
-import com.qinqin.common.utils.LogUtils;
-import com.qinqin.common.utils.AESUtils;
-import com.qinqin.common.utils.RSAUtils;
+import com.app.common.utils.LogUtils;
+import com.app.common.utils.AESUtils;
+import com.app.common.utils.RSAUtils;
 
 import butterknife.BindView;
 

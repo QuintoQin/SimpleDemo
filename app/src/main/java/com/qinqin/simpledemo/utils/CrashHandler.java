@@ -2,8 +2,8 @@ package com.qinqin.simpledemo.utils;
 
 import android.content.Context;
 
-import com.qinqin.common.utils.LogUtils;
-import com.qinqin.common.utils.PackageUtils;
+import com.app.common.utils.LogUtils;
+import com.app.common.utils.PackageUtils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

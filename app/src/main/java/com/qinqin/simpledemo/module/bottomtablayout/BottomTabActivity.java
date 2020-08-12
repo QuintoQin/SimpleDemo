@@ -2,7 +2,7 @@ package com.qinqin.simpledemo.module.bottomtablayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.Button;
 
 import com.qinqin.simpledemo.R;

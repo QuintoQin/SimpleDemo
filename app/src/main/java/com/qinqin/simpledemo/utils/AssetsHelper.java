@@ -2,7 +2,7 @@ package com.qinqin.simpledemo.utils;
 
 import android.content.Context;
 
-import com.qinqin.common.utils.LogUtils;
+import com.app.common.utils.LogUtils;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,7 +1,7 @@
 package com.qinqin.simpledemo.module.mvp.simplemvp;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.qinqin.simpledemo.R;
-import com.qinqin.common.utils.LogUtils;
+import com.app.common.utils.LogUtils;
 
 public class TheMvpActivity extends AppCompatActivity implements MainView {
     TextView tv;

@@ -3,12 +3,11 @@ package com.qinqin.simpledemo.module.mvp.base;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.qinqin.common.utils.ToastUtils;
+import com.app.common.utils.ToastUtils;
 import com.qinqin.simpledemo.R;
-import com.qinqin.simpledemo.base.*;
 
 import butterknife.ButterKnife;
 

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SimpleDemo.iml" filepath="$PROJECT_DIR$/.idea/SimpleDemo.iml" group="SimpleDemo" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="SimpleDemo/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/common.iml" group="SimpleDemo/common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SimpleDemo.iml" filepath="$PROJECT_DIR$/.idea/SimpleDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/SimpleDemo.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/SimpleDemo.common.iml" />
     </modules>
   </component>
 </project>

@@ -7,7 +7,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.qinqin.simpledemo"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -123,6 +123,8 @@ dependencies {
     implementation 'com.jakewharton:disklrucache:2.0.2'
     implementation 'com.tencent.tinker:tinker-android-lib:1.7.7'
     implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation project(path: ':video')
     testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'

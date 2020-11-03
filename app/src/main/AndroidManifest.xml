@@ -26,6 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".module.video.IjkActivity"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".module.splash.SplashActivity">
             <intent-filter>
@@ -54,22 +55,16 @@
             android:screenOrientation="portrait" />
         <activity android:name=".module.photo.PhotoViewActivity" />
         <activity android:name=".module.recyclerview.RecylerViewActivity" />
-        <activity android:name=".module.recyclerview.baserecyleradpter.multpleActivity" />
-        <!-- 友盟多渠道打包 -->
+        <activity android:name=".module.recyclerview.baserecyleradpter.multpleActivity" /> <!-- 友盟多渠道打包 -->
         <!-- <meta-data -->
         <!-- android:name="UMENG_CHANNEL" -->
         <!-- android:value="${UMENG_CHANNEL_VALUE}" /> -->
-
         <activity android:name=".module.sql.LitePalActivity" />
         <activity android:name=".module.mvp.MVPActivity" />
-        <activity android:name=".module.webview.WebViewActivity" />
-
-        <!-- 广播 -->
+        <activity android:name=".module.webview.WebViewActivity" /> <!-- 广播 -->
         <!-- <receiver android:name=".broadcastreceiver.NetworkConnectChangedReceiver" > -->
         <!-- <intent-filter> -->
         <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
-
-
         <!-- </intent-filter> -->
         <!-- </receiver> -->
         <activity android:name=".module.hotfix.HotFixActivity" />
@@ -91,7 +86,7 @@
         <activity android:name=".module.bus.eventbus.FirstActivity" />
         <activity android:name=".module.bus.eventbus.SecondActivity" />
         <activity android:name=".module.recyclerview.baserecyleradpter.HomeRyActivity" />
-        <activity android:name=".module.rx.RetrofitOwnActivity"></activity>
+        <activity android:name=".module.rx.RetrofitOwnActivity" />
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/SimpleDemo.iml" filepath="$PROJECT_DIR$/.idea/SimpleDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleDemo.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/SimpleDemo.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/SimpleDemo.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/video/SimpleDemo.video.iml" filepath="$PROJECT_DIR$/.idea/modules/video/SimpleDemo.video.iml" />
     </modules>
   </component>
 </project>

@@ -15,4 +15,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="节操播放器" />
+
+    <Button
+        android:id="@+id/video_ijk"
+        style="@style/CommonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ijk播放器" />
 </LinearLayout>

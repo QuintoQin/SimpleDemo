@@ -25,4 +25,9 @@ public class VideoActivity extends AppCompatActivity {
      void jieCao() {
         startActivity(new Intent(VideoActivity.this, JieCaoActivity.class));
     }
+
+    @OnClick(R.id.video_ijk)
+    void ijk(){
+        startActivity(new Intent(VideoActivity.this, IjkActivity.class));
+    }
 }
